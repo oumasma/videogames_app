@@ -3,17 +3,19 @@
   <head>
     <title>Basic routing</title>
     <link rel="stylesheet" href="dist/bundle.css" />
+
   </head>
 
   <body>
-    <a href="#">The Hyper Program</a>
-
-    <form id="search-form">
-        <div class="form-group">
-            <input type="search" class="form-control" id="search" placeholder="Find a game">
-        </div>
-            <button type="submit" class="btn btn-primary btn-lg">Rechercher</button>
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a href="#" class="navbar-brand">THE HYPER PROGAME </a>
+        <form class="form-inline" id="search-form">
+          <input class="form-control mr-md-2" type="search" placeholder="Find a game" aria-label="Search" id="search">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">search</button>
         </form>
+      </nav>
+    
+
     
     <div class="container">
         <h1>Welcome,</h1>
@@ -21,14 +23,15 @@
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra ipsum. Sed facilisis ornare felis, nec dapibus sapien. Nullam porta bibendum velit, gravida auctor neque porta non. Nullam egestas eros turpis, vitae aliquam libero efficitur rutrum. In eu felis commodo, mollis metus sed, mollis nibh. Integer pharetra est sed nibh commodo ornare. Morbi massa ligula, vehicula in massa eu, tempor ornare leo. Morbi gravida felis sit amet mauris imperdiet posuere. Mauris enim leo, fermentum vel vehicula vitae, tristique non est. Curabitur ut metus et leo sagittis bibendum ut a urna. Sed in lectus et ante sagittis ullamcorper eu sed lacus. Sed ac arcu quis lacus ultricies scelerisque. Curabitur at ante ut velit commodo aliquam sodales a mi. Morbi ultricies finibus tincidunt.
         </p>
     </div>
-
-    <select class="form-control" id="selectPlateform">
-        <option selected>Plateform : any</option>  
+    <div class="container">
+    <select  id="selectPlateform">
+        <option selected>Plateform : any</option>
     </select>
+    </div>
 
-    <section id="pageContent">
-        
-    </section>
+    <div class="container">
+        <section id="pageContent" class="row"></section>
+      </div>
 
     <footer class="mx-0 p-0 my-3">
         <div class="row">

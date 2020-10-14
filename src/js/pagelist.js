@@ -24,17 +24,17 @@ const PageList = (argument = "") => {
             
             console.log(article);
             articles +=  `
+            <div class="col-md-3">
                 <div class="cardGame" style="width: 18rem;">
                   <a href = "#pagedetail/${article.id}">
                     <img class="card-img-top" src="${article.background_image}" alt="Card image cap">
                     <div class="card-body">
                       <h5 class="card-title">${article.name}</h5>
                       <p>${article.platforms.map((item) => item.platform.name).join(" ")}</p>
-                      
-                      <p class="card-title">${article.released}</p>
                     </div>
                   </a>
                 </div>
+              </div>
                 `;
           });
           document.querySelector(".page-list .articles").innerHTML = articles;
