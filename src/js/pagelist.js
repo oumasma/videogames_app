@@ -1,3 +1,7 @@
+
+
+const searchForm = document.getElementById("search-form");
+
 const PageList = (argument = "") => {
   const preparePage = () => {
     let cleanedArgument = argument.replace(/\s+/g, "-");
@@ -8,26 +12,36 @@ const PageList = (argument = "") => {
       if (argument) {
         finalURL = url + "?search=" + argument;
       }
+      else {
+        finalURL = url + "?dates=2021-01-01,2021-12-31&ordering=-added";
+      }
+      
 
       fetch(`${finalURL}`)
         .then((response) => response.json())
         .then((response) => {
           response.results.forEach((article) => {
-            articles += `
-                  <div class="cardGame">
-                    <a href = "#pagedetail/${article.id}">
-                    <h1>${article.name}</h1>
-                    <h2>${article.released}</h2>
-                    ${article.id}
-                    </a>
-                  </div>
+            
+            console.log(article);
+            articles +=  `
+                <div class="cardGame" style="width: 18rem;">
+                  <a href = "#pagedetail/${article.id}">
+                    <img class="card-img-top" src="${article.background_image}" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">${article.name}</h5>
+                      <p>${article.platforms.map((item) => item.platform.name).join(" ")}</p>
+                      
+                      <p class="card-title">${article.released}</p>
+                    </div>
+                  </a>
+                </div>
                 `;
           });
           document.querySelector(".page-list .articles").innerHTML = articles;
         });
     };
 
-    fetchList("https://api.rawg.io/api/games?dates=2021-01-01,2021-12-31&ordering=-added", cleanedArgument);
+    fetchList("https://api.rawg.io/api/games", cleanedArgument);
   };
 
   const render = () => {
@@ -42,6 +56,12 @@ const PageList = (argument = "") => {
 
   render();
   console.log("fonction de la pagelist");
+
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let search = document.getElementById("search").value;
+    PageList(search);
+  });
 };
 
 export { PageList };
