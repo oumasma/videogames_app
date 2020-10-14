@@ -1,6 +1,6 @@
 
-
 const searchForm = document.getElementById("search-form");
+const select = document.getElementById("selectPlateform")
 
 const PageList = (argument = "") => {
   const preparePage = () => {
@@ -39,10 +39,28 @@ const PageList = (argument = "") => {
           });
           document.querySelector(".page-list .articles").innerHTML = articles;
         });
+        
     };
 
     fetchList("https://api.rawg.io/api/games", cleanedArgument);
   };
+/*select.addEventListener('change', event => {
+      let checkedOption = [...event.target.children].find(c => c.selected);
+      console.log(checkedOption.outerHTML);
+    });*/
+    const choosePlateform = () => {
+      let  selectPlatform = document.getElementById("selectPlateform")
+      fetch(`https://api.rawg.io/api/platforms/lists/parents`)
+          .then((response) => response.json())
+          .then((data) => {
+            data.results.forEach(platform => {
+              selectPlatform.innerHTML += `
+            <option>${platform.name}</option> 
+              `
+            })
+          })
+    };
+
 
   const render = () => {
     pageContent.innerHTML = `
@@ -53,6 +71,7 @@ const PageList = (argument = "") => {
 
     preparePage();
   };
+  choosePlateform();
 
   render();
   console.log("fonction de la pagelist");
