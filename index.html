@@ -8,43 +8,59 @@
 
   <body>
     <nav class="navbar navbar-dark bg-dark justify-content-between">
-        <a href="#" class="navbar-brand">THE HYPER PROGAME </a>
-        <form class="form-inline" id="search-form">
+        <a href="#" class="navbar-brand">The Hyper Programe </a>
+        <form class="form-inline " id="search-form">
           <input class="form-control mr-md-2" type="search" placeholder="Find a game" aria-label="Search" id="search">
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">search</button>
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"> <i class="fa fa-search"></i></button>
         </form>
       </nav>
     
 
     
-    <div class="container">
+    <div class="container" id="text-home">
         <h1>Welcome,</h1>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis pharetra ipsum. Sed facilisis ornare felis, nec dapibus sapien. Nullam porta bibendum velit, gravida auctor neque porta non. Nullam egestas eros turpis, vitae aliquam libero efficitur rutrum. In eu felis commodo, mollis metus sed, mollis nibh. Integer pharetra est sed nibh commodo ornare. Morbi massa ligula, vehicula in massa eu, tempor ornare leo. Morbi gravida felis sit amet mauris imperdiet posuere. Mauris enim leo, fermentum vel vehicula vitae, tristique non est. Curabitur ut metus et leo sagittis bibendum ut a urna. Sed in lectus et ante sagittis ullamcorper eu sed lacus. Sed ac arcu quis lacus ultricies scelerisque. Curabitur at ante ut velit commodo aliquam sodales a mi. Morbi ultricies finibus tincidunt.
+            The Hyper Progame is the world’s premier event for computer and video games and related products. At The Hyper Progame,
+            the video game industry’s top talent pack the Los Angeles Convention Center, connecting tens of thousands of the best,
+            brightest, and most innovative in the interactive entertainment industry. For three exciting days, leading-edge companies,
+            groundbreaking new technologies, and never-before-seen products will be showcased. The Hyper Progame connects you
+            with both new and existing partners, industry executives, gamers, and social influencers providing unprecedented exposure 
         </p>
     </div>
-    <div class="container">
-    <select  id="selectPlateform">
-        <option selected>Plateform : any</option>
-    </select>
+        <div class="container" id="btnselect">
+            <div class="form-select col-md-3 mb-5">
+        <select class="custom-select" id="selectPlateform">
+            <option selected>Plateform : any</option>
+        </select>
+        </div>
     </div>
+    
 
+    
+    <section id="pageContent"></section>
+    
+        
+     
     <div class="container">
-        <section id="pageContent" class="row"></section>
-      </div>
+        <div class="row justify-content-center mb-5">
+            <button class="btn btn-lg " id="more">show more</button>
+        </div>
+    </div>
+        
 
-    <footer class="mx-0 p-0 my-3">
+<div class="container">
+    <footer class=" mt-5 mx-0 p-0 my-3">
         <div class="row">
           <div id="separator"></div>
         </div>
         <div class="row stick">
           <p class="pt-3">
-            Kinouani - Fictional Website for exercice
+            Kinouani @ 2020 - Fictional Website for THP-Next
           </p>
         </div>
       </footer>
-
+</div>
     <script src="dist/bundle.js"></script>
-    
+    <script src="https://kit.fontawesome.com/f2f9fc2fd7.js" crossorigin="anonymous"></script>
   </body>
 </html>
